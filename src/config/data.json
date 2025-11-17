@@ -1,0 +1,52 @@
+{
+  "style": {
+    "bgLayout": "#F8F8F8",
+    "primaryColor": "#1E1E1E",
+    "secondColor": "#FF6700",
+    "textColor": "#FFFFFF",
+    "placeholderColor": "gray",
+    "biru": "#2129FF",
+    "pink": "#FF2F92",
+    "black": "#000",
+    "grayblack": "#201E1F",
+    "birutua": "#2129FF",
+    "birumuda": "#73FDD6"
+  },
+  "tabBar": {
+    "background": "#E1E0FF",
+    "default": {
+      "background": "#E1E0FF",
+      "color": "#666"
+    },
+    "active": {
+      "background": "#201E1F",
+      "color": "red"
+    }
+  },
+  "media": [
+    "Sm",
+    "Md",
+    "Lg",
+    "Xl",
+    "Xxl"
+  ],
+  "colors": {
+    "primary": "#007bff",
+    "secondary": "#6c757d",
+    "success": "#28a745",
+    "danger": "#dc3545",
+    "info": "#17a2b8",
+    "warning": "#ffc107",
+    "light": "#f8f9fa",
+    "dark": "#343a40"
+  },
+  "card": {
+    "bgColor": "#FFF",
+    "headerColor": "#E1E0FF",
+    "contentColor": "#FFF",
+    "footerColor": "#E8E8E8"
+  },
+  "text": {
+    "light": "#8F9098"
+  }
+}

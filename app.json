@@ -1,0 +1,8 @@
+{
+  "name": "vCLI19Project",
+  "displayName": "vCLI19Project",
+  "server_url": "http://10.0.2.2:8888/api",
+  "image_url": "http://10.0.2.2:8888/images",
+  "KEY_USER_INFO": "ogya_demo_userInfo",
+  "APP_VERSION": "0.0.1-beta"
+}
