@@ -15,6 +15,7 @@ const extractColor = objectToArray({
     warning: colors.warning,
     white: "#FFF",
     black: "#000",
+    softLight: '#F6F6F6'
 });
 extractColor.prop.forEach((prop, i) => {
     dynamic[`${prop}`] = { color: extractColor.value[i] };

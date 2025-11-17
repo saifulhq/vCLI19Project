@@ -133,7 +133,7 @@ export default function App() {
         return dispatch({ type: 'SIGN_OUT' });
       }
     },
-    signIn: () => dispatch({ type: 'SIGN_UP' }),
+    signUp: () => dispatch({ type: 'SIGN_UP' }),
     forgotPassword: () => dispatch({ type: 'FORGOT_PASSWORD' }),
   }), []);
 
@@ -172,6 +172,7 @@ export default function App() {
   }
 
   const Stack = createStackNavigator();
+  console.log('check state', state);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <AuthContext.Provider value={authContext}>

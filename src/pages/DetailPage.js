@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { Image, Text, View } from 'react-native';
 import { post } from '../utils/HhttpHelper';
 import { image_url } from '../../app.json';

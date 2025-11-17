@@ -3,7 +3,6 @@ import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Button, Keyboard, Platform, Text, TouchableOpacity, View } from 'react-native';
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const NotificationScreen = () => {
     const navs = useNavigation();

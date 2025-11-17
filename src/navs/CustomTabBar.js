@@ -63,6 +63,7 @@ const CustomTabBar = (props) => {
 
     const { state, descriptors, navigation } = props;
     const dispatch = useDispatch();
+    console.log('check index', state.index);
 
     const [dimentions, setDimensions] = useState({ height: 20, width: 100 });
     const buttonWidth = dimentions.width / state.routes.length;
@@ -72,6 +73,11 @@ const CustomTabBar = (props) => {
         setDimensions({ height, width })
     }
     const tabPositionX = useSharedValue(0);
+
+    useEffect(() => {
+        tabPositionX.value = withSpring(buttonWidth * state.index, { damping: 20, stiffness: 120 });
+    }, [state.index, buttonWidth, tabPositionX]);
+
     const animatedStyle = useAnimatedStyle(() => {
         return {
             transform: [{ translateX: tabPositionX.value }]
@@ -112,7 +118,6 @@ const CustomTabBar = (props) => {
                 const isFocused = state.index === index;
 
                 const onPress = () => {
-                    tabPositionX.value = withSpring(buttonWidth * index, { duration: 1000 });
                     const event = navigation.emit({
                         type: 'tabPress',
                         target: route.key,

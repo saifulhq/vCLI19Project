@@ -2,6 +2,7 @@ import { View, Text, Alert } from 'react-native'
 import React, { useContext } from 'react'
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import { AuthContext } from '../App';
+import s from '../styles';
 
 const SideMenusCustom = (props) => {
     const { navigation } = props;
@@ -9,12 +10,16 @@ const SideMenusCustom = (props) => {
 
     return (
         <DrawerContentScrollView {...props}>
-            <View style={{ padding: 20, borderBottomWidth: 1, borderBottomColor: '#ddd' }}>
-                <Text style={{ marginTop: 10, fontSize: 16 }}>Halo, Saiful Haqqi</Text>
+            <View style={[s.p10]}>
+                <Text style={[s.textXl, s.fw8]}>Halo, Saiful Haqqi</Text>
             </View>
 
-            {/* <DrawerItemList {...props} /> */}
-
+            <DrawerItem
+                label="Header Animated (Detail)"
+                onPress={() => {
+                    props.navigation.push("DetailScreen");
+                }}
+            />
             <DrawerItem
                 label="Flat List Pagination"
                 onPress={() => {
@@ -30,12 +35,37 @@ const SideMenusCustom = (props) => {
                 }}
             />
             <DrawerItem
-                label="Profile"
+                label="Flat List Tab Bar (Movie)"
+                onPress={() => {
+                    props.navigation.navigate("MainAppFlow", {
+                        screen: "MainApp",
+                        params: {
+                            screen: 'MovieTab'
+                        }
+                    });
+                }}
+            />
+            <DrawerItem
+                label="Simple Page (Profile)"
                 onPress={() => {
                     props.navigation.navigate("MainAppFlow", {
                         screen: "MainApp",
                         params: {
                             screen: 'ProfileTab'
+                        }
+                    });
+                }}
+            />
+            <DrawerItem
+                label="Gorhom Bottom Sheet"
+                onPress={() => {
+                    props.navigation.navigate("MainAppFlow", {
+                        screen: "MainApp",
+                        params: {
+                            screen: 'ProfileTab', 
+                            params: {
+                                screen: 'NotificationScreen'
+                            }
                         }
                     });
                 }}
