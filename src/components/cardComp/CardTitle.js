@@ -7,7 +7,7 @@ import s from '../../styles';
 
 const CardTitle = (props) => {
 
-    const { title, children, style, textStyle, accordion, expanded, setExpanded, ...otherProps } = props;
+    const { title, children, style, textStyle, accordion, expanded, onPress, ...otherProps } = props;
     const compStyles = [s.p10, s.rnt10, styles.container];
     const rotateAnim = useRef(new Animated.Value(0)).current;
     const rotate = rotateAnim.interpolate({
@@ -22,11 +22,9 @@ const CardTitle = (props) => {
     })
 
     useEffect(() => {
-        // trigger arrow animated manual jika ketika init harus expanded
-        if (accordion && expanded) {
-            rotateTiming(1).start();
-        }
-    }, [])
+        // Animasikan panah setiap kali status 'expanded' berubah
+        rotateTiming(expanded ? 1 : 0).start();
+    }, [expanded]);
 
     const renderChildren = () => {
         if (children) {
@@ -40,13 +38,13 @@ const CardTitle = (props) => {
 
     const toggleAccordion = () => {
         if (!accordion) return;
-        setExpanded(!expanded);
         rotateTiming(expanded ? 0 : 1).start();
+        if (onPress) onPress();
     };
 
     // Merge custom styles if provided
     if (style) {
-        cardStyles.push(style);
+        compStyles.push(style);
     }
 
     const renderAccordion = () => {

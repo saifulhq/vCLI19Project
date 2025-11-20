@@ -21,6 +21,18 @@ const SideMenusCustom = (props) => {
                 }}
             />
             <DrawerItem
+                label="Accordion"
+                onPress={() => {
+                    props.navigation.push("AccordionScreen");
+                }}
+            />
+            <DrawerItem
+                label="Flat List Drag Delete"
+                onPress={() => {
+                    props.navigation.push("FlatListDragDeleteScreen");
+                }}
+            />
+            <DrawerItem
                 label="Flat List Pagination"
                 onPress={() => {
                     props.navigation.navigate("MainAppFlow", {

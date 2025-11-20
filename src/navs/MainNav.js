@@ -4,6 +4,8 @@ import RootTabs from './RootTabsNav';
 import RightDrawerCustom from './RightDrawerCustom';
 import SideMenusCustom from './SideMenusCustom';
 import DetailScreen from '../pages/DetailPage';
+import AccordionScreen from '../pages/AccordionScreen';
+import FlatListDragDeleteScreen from '../pages/FlatListDragDeleteScreen';
 
 const RightDrawer = createDrawerNavigator();
 const RightDrawerNavigator = () => {
@@ -51,6 +53,8 @@ export const getMainNavigation = () => {
 
     return [
         { name: "Main App Drawer", component: DrawerNav },
+        { name: "AccordionScreen", component: AccordionScreen },
+        { name: "FlatListDragDeleteScreen", component: FlatListDragDeleteScreen },
         { name: "DetailScreen", component: DetailScreen }
     ];
 }

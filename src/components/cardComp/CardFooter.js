@@ -11,7 +11,7 @@ const CardFooter = (props) => {
 
     // Merge custom styles if provided
     if (style) {
-        cardStyles.push(style);
+        compStyles.push(style);
     }
 
     return (
